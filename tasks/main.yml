@@ -1,2 +1,15 @@
 ---
 # tasks file for mnn.varnish
+
+- apt: name=apt-transport-https
+
+- name: Add repo.varnish-cache.org pubkey
+  apt_key: data="{{ lookup('file', 'repo.varnish-cache.org.pub') }}"
+           state=present
+
+- name: Add varnish-cache.org repo
+  apt_repository: repo='deb https://repo.varnish-cache.org/ubuntu/ trusty varnish-{{ varnish_version }}.0'
+                  state=present
+
+- name: Install Varnish
+  apt: name=varnish

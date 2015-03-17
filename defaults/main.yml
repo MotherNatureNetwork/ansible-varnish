@@ -1,2 +1,4 @@
 ---
 # defaults file for mnn.varnish
+
+varnish_version: 4
