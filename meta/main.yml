@@ -1,0 +1,24 @@
+---
+galaxy_info:
+  author: Justin Caratzas
+  description:
+  company: Mother Nature Network
+  license: GPLv4
+  min_ansible_version: 1.2
+  platforms:
+  - name: Ubuntu
+    versions:
+      - trusty
+  #- name: Debian
+  #  versions:
+  #  - all
+  #  - etch
+  #  - lenny
+  #  - squeeze
+  #  - wheezy
+  #
+  categories:
+    - system
+    - web
+
+dependencies: []
