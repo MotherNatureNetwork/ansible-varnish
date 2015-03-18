@@ -1,2 +1,8 @@
 ---
 # handlers file for mnn.varnish
+
+- name: Reload Varnish
+  service: name=varnish state=reloaded
+
+- name: Restart Varnish
+  service: name=varnish state=restarted

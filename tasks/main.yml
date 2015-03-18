@@ -13,3 +13,11 @@
 
 - name: Install Varnish
   apt: name=varnish
+
+- name: Configure Varnish VCL
+  template: src=config dest=/etc/varnish/default.vcl
+  notify: Reload Varnish
+
+- name: Configure Varnish options
+  template: src=default dest=/etc/default/varnish
+  notify: Restart Varnish
