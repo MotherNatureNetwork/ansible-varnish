@@ -25,7 +25,7 @@ MEMLOCK=82000
 # See varnishd(1) for more information.
 #
 # Main configuration file. You probably want to change it :)
-VARNISH_VCL_CONF=/etc/varnish/default.vcl
+VARNISH_VCL_CONF=/etc/varnish/{{ varnish_config_file | basename }}
 
 # Default address and port to bind to
 # Blank address means all IPv4 and IPv6 interfaces, otherwise specify

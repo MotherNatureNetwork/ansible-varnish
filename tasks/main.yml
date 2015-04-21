@@ -15,7 +15,7 @@
   apt: name=varnish
 
 - name: Configure Varnish VCL
-  template: src=config dest=/etc/varnish/default.vcl
+  template: src="{{ varnish_config_file }}" dest=/etc/varnish/
   notify: Reload Varnish
 
 - name: Configure Varnish options
