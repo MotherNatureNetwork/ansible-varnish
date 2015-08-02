@@ -8,11 +8,14 @@
            state=present
 
 - name: Add varnish-cache.org repo
-  apt_repository: repo='deb https://repo.varnish-cache.org/ubuntu/ trusty varnish-{{ varnish_version }}.0'
+  apt_repository: repo='deb https://repo.varnish-cache.org/ubuntu/ trusty varnish-{{ varnish_version|list|first }}.0'
                   state=present
 
 - name: Install Varnish
   apt: name=varnish
+
+- include: basicauth_vmod.yml
+  when: varnish_basicauth
 
 - name: Configure Varnish VCL
   template: src="{{ varnish_config_file }}" dest=/etc/varnish/
