@@ -14,3 +14,4 @@ varnish_storage_size: 1G
 varnish_ttl: 120
 
 varnish_basicauth: no
+varnish_basicauth_git_tag: varnish-4.0

@@ -48,7 +48,9 @@
 
 - name: Get Varnish Basic Auth VMOD
   git: repo=http://git.gnu.org.ua/cgit/vmod-basicauth.git
+       version={{ varnish_basicauth_git_tag }}
        dest=/home/{{ ansible_ssh_user }}/vmod-basicauth
+       accept_hostkey=yes
 
 - name: Bootstrap Basic Auth VMOD
   command: ./bootstrap

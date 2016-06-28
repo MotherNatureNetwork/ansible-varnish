@@ -1,22 +1,15 @@
 ---
+
 galaxy_info:
   author: Justin Caratzas
   description:
-  company: Mother Nature Network
-  license: GPLv4
+  company: NCG
+  license: MIT
   min_ansible_version: 1.2
   platforms:
   - name: Ubuntu
     versions:
       - trusty
-  #- name: Debian
-  #  versions:
-  #  - all
-  #  - etch
-  #  - lenny
-  #  - squeeze
-  #  - wheezy
-  #
   categories:
     - system
     - web
