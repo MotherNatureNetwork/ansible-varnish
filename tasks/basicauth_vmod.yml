@@ -2,7 +2,7 @@
 # tasks file for mnn.varnish-basicauth
 
 - name: Install requirements.
-  sudo: yes
+  become: yes
   apt: pkg={{ item }}
        state=installed
   with_items:
@@ -65,6 +65,6 @@
            chdir=/home/{{ ansible_ssh_user }}/vmod-basicauth
 
 - name: Install VMOD
-  sudo: yes
+  become: yes
   command: make install
            chdir=/home/{{ ansible_ssh_user }}/vmod-basicauth
