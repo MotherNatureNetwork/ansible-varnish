@@ -18,9 +18,12 @@
   when: varnish_basicauth
 
 - name: Configure Varnish VCL
-  template: src="{{ varnish_config_file }}" dest=/etc/varnish/
+  template: src="{{ varnish_config_file }}" dest=/etc/varnish/{{ varnish_config_file | basename }}
   notify: Reload Varnish
 
 - name: Configure Varnish options
   template: src=default dest=/etc/default/varnish
   notify: Restart Varnish
+
+- name: Make sure Varnish is running
+  service: name=varnish state=started

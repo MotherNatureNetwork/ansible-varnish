@@ -1,0 +1,21 @@
+---
+- hosts: all
+
+  roles:
+
+    - role: mnn.nginx
+      nginx_pagespeed_enabled: false
+    - role: mnn.varnish
+
+  post_tasks:
+
+    - name: install test nginx site
+      template: src=index.html
+                dest=/home/vagrant/
+
+    - name: install test nginx site config
+      template: src=nginx.conf
+                dest=/etc/nginx/sites-enabled/test
+
+    - name: reload nginx
+      service: name=nginx state=reloaded
