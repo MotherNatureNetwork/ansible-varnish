@@ -23,7 +23,6 @@
     - libcurl4-openssl-dev
     - python-docutils
     - python-software-properties
-    - libvarnishapi-dev
 
 - name: Get Varnish Source
   get_url: url=https://repo.varnish-cache.org/source/varnish-{{ varnish_version }}.tar.gz

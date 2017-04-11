@@ -1,7 +1,7 @@
 ---
 # defaults file for mnn.varnish
 
-varnish_version: 4.0.3
+varnish_version: 4.0.4
 
 varnish_backend_host: 127.0.0.1
 varnish_backend_port: 8080

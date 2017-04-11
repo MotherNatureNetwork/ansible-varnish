@@ -19,10 +19,8 @@ vagrant:
         cpus: 1
 
   instances:
-
     - name: mnn.varnish-01
-      ansible_groups:
-        - group1
+
 
 ansible:
   playbook: tests/playbook.yml
